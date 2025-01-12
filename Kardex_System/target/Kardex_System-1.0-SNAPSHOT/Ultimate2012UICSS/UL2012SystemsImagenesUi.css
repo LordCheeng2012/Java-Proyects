@@ -1,0 +1,22 @@
+.img{
+    position: relative;
+    align-self: center;
+    margin: 10px;
+}
+
+.ImgLarge{
+    height: 100%;
+    width: 100%;
+}
+.ImgMedia{
+    height: 50%;
+    width: 50%;
+}
+.ImgSmall{
+    height: 30%;
+    width: 30%;
+}
+.centerImg{
+    align-self:center;
+
+}

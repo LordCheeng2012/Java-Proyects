@@ -1,0 +1,57 @@
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+
+}
+
+
+main div{
+
+    margin: 10px;
+}
+
+.DivInform div{
+    height: auto;
+    margin-bottom: -10px;
+}
+.DivGrande{
+    width: auto;
+    height: 50%;
+    padding: 10px;
+    color: var(--negro);
+    background-color: #ffffff40;
+}
+.DivGrande h1{
+    font-size: 15vh;
+    font-weight: bold;
+    margin: 0;
+}
+.DivMedia{
+    width: 70%;
+    height: 30%;
+
+    padding: 0;
+    color: var(--negro);
+    background-color: #ffffff94;
+}
+
+.DivSmall{
+    width: 50%;
+    height: 20%;
+    padding: 0;
+    background-color: #ffffffc4;
+}
+
+/*textos*/
+.FontPresent h1,h2,p{
+    font-family: sans-serif;
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+}

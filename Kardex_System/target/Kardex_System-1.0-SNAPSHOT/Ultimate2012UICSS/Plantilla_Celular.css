@@ -1,0 +1,113 @@
+.ctn-main{
+    height: auto;    
+    width: auto;
+ 
+}
+.hdr{
+    background-image: url("./../img/Fondo_Img_Tecnologico.avif");
+    background-repeat: repeat;
+    background-size: cover;
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 50% 50% 50%;
+    color: var(--azulopaco);
+}
+.hdr:hover {
+   height: auto;  
+}
+.hdr div{
+    padding: 5%;
+    margin: 1%;
+}
+.div_inf h1{
+    font-size:5vh;
+    margin-top: 5%;
+}
+.div_inf h2{
+   
+    font-size: 5vh; 
+}
+
+.div_inf button{
+    background-color: var(--blanco);
+    height: 15%;
+    width: 30%;
+    font-family: sans-serif;
+    font-size: 2vh;
+    margin-top: 5%;
+    color: var(--azulopaco);
+    transition: color 0.5s ease;
+    border: 0;
+}
+.div_inf button:hover{
+    color: var(--Azul2);
+    background-color: var( --azulopaco);
+    border: 1px solid var(--blanco);
+}
+.div_img{
+  /*por defnir*/
+}
+.hdr nav{
+      background-color: var(--Azul2);
+      
+}
+.hdr nav ul{
+  list-style: none;
+    margin:0;
+    padding:0;
+}
+.hdr nav li{
+    background-color: var(--blanco);
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.hdr nav li a{
+    color: var(--Azul1);
+    text-decoration:none;
+    transition: background-color 0.5s ease,
+        color 0.5s ease;
+}
+.hdr nav li a:hover{
+     color: var(--blanco);
+    background-color: var(--azulopaco);
+}
+
+/*body cuerpo*/
+.Div-body div ,section{
+    /*darle un estilosd e bordes o margenes a cada
+    elemento de este contenesor*/
+    margin: 5%;
+    padding: 0.2%;   
+}
+.card-info{
+ background-color: var(--Azul2);
+ color:var(--Azul3);
+ font-size: 2vh;
+  
+}
+.Div_body-h1{
+     color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+}
+/*Info servicios*/
+.info_Tecnologics{
+    background-color: var(--blanco);
+    color: var(--Azul1);
+}
+
+.div_info2 ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    
+}
+
+
