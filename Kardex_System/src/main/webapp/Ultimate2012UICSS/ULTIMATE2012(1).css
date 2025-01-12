@@ -1,0 +1,427 @@
+
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --Azul1:#5178f1;
+    --Azul3:#8aa5f4;
+    --Azul4:#c5d3fa;
+    --Azul2:#5178f1;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+
+body{
+  
+    height: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+     background-color: var(--verde_oscuro);
+     overflow-x : hidden;
+}
+/* header */
+.ctn-main{
+    height: 100vh;
+    background-image: url("./../img/Fondo_Tec_Verde.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    width: 100%;
+   
+}
+
+
+.hdr{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50% 50%;
+    transition: width 0.5s ease;
+}
+.hdr:hover {
+    width: 80%;
+    
+}
+
+.div_inf{
+    padding: 5%;
+    /*! background-color: var(--green); */   
+    color: var(--blanco);
+}
+.div_inf h1{
+    margin: 0;
+    padding: 0;
+    font-size:12vh;
+    margin-top: 5%;
+}
+.div_inf h2{
+    margin: 0;
+    padding: 0;
+    font-size: 11vh; 
+}
+.div_inf button{
+    background-color: var(--blanco);
+    height: 15%;
+    width: 30%;
+    font-family: sans-serif;
+    font-size: 3vh;
+    margin-top: 5%;
+    color: var(--green);
+    transition: color 0.5s ease;
+    border: 0;
+}
+.div_inf button:hover{
+    color: var(--blanco_semiverde);
+    background-color: var(--verdetrans);
+}
+.blanco{
+    color: var(--blanco);
+}
+.verde_tex1{
+    color: var(--verde_text1);
+}
+.verde_tex2{
+    color: var(--verde_tex2);
+}
+
+
+.div_img {
+   
+ padding: 5%;
+   width: 100%;
+   height: 100%;
+}
+.ctn-main nav {
+   height: 100%;
+    width: 50%;
+        
+}
+.ctn-main nav ul {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    /*! background-color: var(--blanco); */
+    
+}
+.ctn-main nav ul li {
+    list-style: none;
+    height: 19%;
+    /*! background-color: var(--green); */
+    text-align: center;
+    display: flex;
+    transition: border 0.5s ease-in;
+ 
+}
+.ctn-main nav ul li:hover{
+    background-color: var(--blanco);
+    border: 1px solid var(--blanco);
+    
+}
+.ctn-main nav ul li a{
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    font-size: 5vh;
+    color: var(--blanco);
+    transition: color 0.5s ease;
+}
+.ctn-main nav ul li a:hover{
+    color: var(--green);
+    background-color: var(--verde_tex2);
+}
+
+/*  main -div  */
+
+.Div-body{
+    width: 100%;
+    height: auto;
+    background-color: var(--verdetrans);
+    padding: 0.5%;
+    
+}
+.Div-body div ,section {
+    width: 95%;
+    height: 100%;
+    background-color: var(--negro);
+    margin: 1%;
+    padding: 1%;
+    color: var( --verdetrans);
+}
+.Div_body-h1 img{
+    height: 10vh;
+    background-color: var(--verde_text1);
+}
+.Div_body-h1{
+    font-size: 5vh;
+    display: flex;
+    margin: 1% 2% 2% 2%;
+    flex-direction: row;
+    gap: 5%;
+}
+.Div_body-h1 h1{
+    margin: 0;
+}
+.card-info p {
+    color: var(--verde_text1);
+    font-size: 4vh;
+}
+
+.info_Tecnologics{
+ /*estilos del padre por definir..*/  
+ background-color: var(--negro);
+}
+.info_title{
+    font-size: 5vh;
+}
+.info_Tecnologics content{
+    display: flex;
+    margin: 0;
+    padding: 1%;
+    flex-direction: column;
+    height: 50%;
+    color: var(--negro);
+}
+
+.div_info1{
+    background-color: var(--verdetrans);
+   
+}
+.div_info2{
+background-color: var(--verde_text1);
+
+}
+.div_info2 ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.div_info2 ul li{
+    padding: 1%;
+}
+.div_info2 ul li button{
+    background-color: var(--blanco);
+    color: var(--negro);
+    border: none;
+    height: 50%;
+    padding: 5%;
+    font-size: 4.5vh;
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
+
+
+}
+.div_info2 ul li button:hover{
+    background-color: var(--negro);
+    color: var(--verdetrans);
+    border: 1px solid var(--blanco_semiverde);
+}
+
+/*Footer Contact*/
+
+.footer_contact{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--negro);
+}
+.contact_social{
+    background-color: var(--blanco_semiverde); 
+    color: var(--verde_text1);
+    height: auto;
+    width: 100%;
+    padding: 0.5%;
+}
+.contact_social h1{
+    font-size: 4vh;
+    color: var(--verde_oscuro);
+    padding: 1%;
+    margin: 0;
+}
+.contact_social img{
+    width: 5%;
+    height: 20%;
+    padding: 1%;   
+}
+.img_auto{
+    width: 10%;
+}
+.contact_social div {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    gap: 5%;
+}
+
+.footer_contact card{
+    display: flex;
+    margin: 0;
+    padding: 1%;
+    width: 50%;
+    flex-direction: row; 
+    height: 50%;
+    font-size: 3vh;
+    color: var(--blanco);
+}
+.footer_contact form{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 50%;
+    margin: 0;
+    background-color: var(--blanco_semiverde);
+}
+.footer_contact form input,button,textarea{
+    margin: 1%;
+    height: 5vh;
+    font-size: 2.5vh;
+    border: none;
+}
+.footer_contact button{
+    background-color: var(--verdetrans);
+    color: var(--negro);
+    height:10vh;
+    transition: color 0.5s ease , background-color 0.5s ease;
+}
+.footer_contact button:hover{
+    background-color: var(--blanco);
+    color: var(--verde_oscuro);
+}
+
+
+@media (max: 1024px) {
+    
+   
+body{
+    background-color: var(--negro);  
+    font-family: sans-serif;
+}
+
+.ctn-main{
+    background-color: var(--azulopaco);    
+    height: auto;
+    width: auto;
+ 
+}
+.hdr{
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    color: var(--blanco);
+}
+.hdr:hover{
+    width: auto;
+}
+.hdr div{
+    padding: 5%;
+    margin: 1%;
+}
+.div_inf h1{
+    font-size:5vh;
+    margin-top: 5%;
+}
+.div_inf h2{
+   
+    font-size: 5vh; 
+}
+
+.div_inf button{
+    background-color: var(--blanco);
+    height: 15%;
+    width: 30%;
+    font-family: sans-serif;
+    font-size: 2vh;
+    margin-top: 5%;
+    color: var(--azulopaco);
+    transition: color 0.5s ease;
+    border: 0;
+}
+.div_inf button:hover{
+    color: var(--Azul2);
+    background-color: var( --azulopaco);
+    border: 1px solid var(--blanco);
+}
+.div_img{
+  /*por defnir*/
+}
+.hdr nav{
+      background-color: var(--Azul2);
+      
+}
+.hdr nav ul{
+  list-style: none;
+    margin:0;
+    padding:0;
+}
+.hdr nav li{
+    background-color: var(--blanco);
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.hdr nav li a{
+    color: var(--Azul1);
+    text-decoration:none;
+    transition: background-color 0.5s ease,
+        color 0.5s ease;
+}
+.hdr nav li a:hover{
+     color: var(--blanco);
+    background-color: var(--azulopaco);
+}
+
+/*body cuerpo*/
+.Div-body div ,section{
+    /*darle un estilosd e bordes o margenes a cada
+    elemento de este contenesor*/
+    margin: 5%;
+    padding: 0.2%;   
+}
+.card-info{
+ background-color: var(--Azul2);
+ color:var(--Azul3);
+ font-size: 2vh;
+  
+}
+.Div_body-h1{
+     color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+}
+/*Info servicios*/
+.info_Tecnologics{
+    background-color: var(--blanco);
+    color: var(--Azul1);
+}
+
+.div_info2 ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    
+}
+
+
+
+
+
+
+}

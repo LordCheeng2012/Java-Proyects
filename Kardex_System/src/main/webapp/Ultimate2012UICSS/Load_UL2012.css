@@ -1,0 +1,81 @@
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+
+.loadbody{
+    overflow: hidden;
+}
+.Load_Page{
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    width: 100%;
+    transition: background-color 2s ease-in;
+}
+.Disepear_Load{
+    background-color: rgba(0, 0, 0, 0);
+}
+.Disepear_Load_ctn{
+    display: none;
+}
+.Load_Page div{
+    width: 40%;
+    height: 50%;
+    font-family: sans-serif;
+    font-size: 8vh;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.4s ease-in;
+   
+
+}
+.Load_Div{
+    transform: scale(1.3);
+    margin: 0 96px;
+}
+
+/*clase añadible animable con js*/
+
+.ctn-1{
+    background-color: white;
+    color: var(--negro);
+}
+
+
+
+.Load_Page_Active{
+    transform: scale(1.3);
+    margin: 0 -4%;
+   
+    
+}
+.Load_Page_Desactive{
+    transform: scale(0.5);
+    margin: 0 0px;
+   
+}
+
+
+.ctn-2{
+    background-color:var(--azulopaco);
+    color: var(--blanco_semiverde);
+
+}
+
