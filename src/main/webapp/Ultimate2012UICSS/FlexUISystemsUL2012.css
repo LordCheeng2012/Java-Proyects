@@ -1,0 +1,21 @@
+.Al_Column{
+    display: flex;
+    flex-direction: column;
+}
+.Al_Column div{
+    margin: 0;
+}
+.Al_Row{
+    display: flex;
+    flex-direction: row;
+}
+
+.Item{
+    margin: 10px;
+  height: 50%;
+  width: 100%;
+}
+
+.ItemWrap{
+    flex-wrap: wrap;
+}
