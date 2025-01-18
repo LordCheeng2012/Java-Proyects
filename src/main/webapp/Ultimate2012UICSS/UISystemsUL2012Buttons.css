@@ -1,0 +1,27 @@
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdeButton:#00cc6971;
+
+}
+
+.ButtonInfo{
+    height: 20%;
+    width: 100%;
+    font-size: 20px;
+    background-color: #00cc6971;
+    color: var(--blanco);
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid white;
+}
+.ButtonInfo:hover{
+    background-color:var(--blanco);
+    color: #00cc6971;
+}
+

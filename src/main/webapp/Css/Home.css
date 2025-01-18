@@ -1,0 +1,202 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31/12/2024, 01:57:13 AM
+    Author     : DELL CI7
+*/
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --Azul1:#5178f1;
+    --Azul3:#8aa5f4;
+    --Azul4:#c5d3fa;
+    --Azul2:#5178f1;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+body{
+   font-family:sans-serif;
+   height:auto;
+    width: 200vh;
+   display:flex;
+   flex-direction:column;
+   background-color: var(--azul);
+}
+
+h1,h2,p,label{
+    
+    margin:0;
+    padding: 0;
+        
+}
+
+
+body main{
+     padding:1%;
+    border : none;
+    margin:0.9%;
+    height:70vh;
+     width:100%;
+    background-color:var(--Azul4);
+}
+.Menu{
+    display: flex;
+    flex-direction:row;
+    border : none;
+    margin:1%;
+    height:auto;
+    width:100%;
+    padding:1%;
+    background-color:var(--Azul4);
+}
+
+
+.Menu .info_user{
+    width: 50%
+}
+.Menu nav{
+    width:50%;
+    padding: 1%;
+}
+
+.Menu nav ul {
+    display:flex;
+    flex-direction:column;
+    padding:2%;
+    
+}
+.Menu nav ul li{
+    list-style:none;
+    text-align:center;
+    padding: 0;
+    display: flex;
+    border:1px solid var(--blanco);
+}
+.Menu nav ul li  :hover{
+    color:var(--blanco);
+    background-color:var(--Azul1);
+    
+}
+.Menu nav ul li a{
+    text-decoration:none;
+    width: 100%;
+    height: 5vh;
+    padding: 3%;
+    color:var(--negro);
+    background-color: var(--Azul4);
+}
+
+
+.info_user{  
+  display: flex;
+  flex-direction: column;
+}
+.user{
+    display: flex;
+    height: 50%;
+     flex-direction: row;
+    background-color: var(--Azul2);
+    justify-content: center;
+    align-items: center;
+}
+.user img{
+    height: 80%;
+    width: 30%;
+    /* padding: 1%; */
+    margin:1%;
+    border: 3px solid var(--Azul4);
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+    outline: 5px solid var(--Azul2);
+}
+.title{
+   
+  
+}
+.info_user .title{
+    display:grid;
+     padding-left: 3%;  
+    height: 50%;
+    padding: 2%;    
+    grid-template-columns:
+        repeat(2,1fr);
+}
+.info_user .title label{
+    margin: 3%;
+    font-size: larger;
+}
+.info_user .title h2{
+  font-size: 3vh;
+  margin: 10%;
+}
+
+.content {
+  height: auto;
+  width: 100%;
+  background-color: var(--blanco);
+}
+.search{
+    display:grid;
+    padding: 0.5%;
+    grid-template-rows: repeat(1,1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+.search label{
+    grid-column:1;
+    margin:0.2%;
+}
+.search input{
+    margin:1%;
+    padding:0.8%;
+    height:50%;
+    border:1px solid var(--Azul2);
+}
+.search select{
+    margin:1%;
+    height:100%;
+    border:1px solid var(--Azul2);
+}
+.search button{
+    padding:1%;
+    margin:1%;
+    border:none;
+    background-color:var(--Azul3);
+    color:var(--blanco);
+    font-size:large;
+}
+.search button:hover{
+     color:var(--Azul3);
+    background-color:var(--blanco);
+}
+.response h1{
+    text-align: center;
+    margin: 0;   
+}
+.Tabla_Resultados{
+    padding:0.1%;
+    background-color:var(--blanco);
+    width: 100%;
+    height: auto;
+}
+.Tabla_Resultados thead
+{
+    text-align:center;
+    background-color:var(--Azul3);
+}
+.Tabla_Resultados tbody{
+    text-align:center;
+    background-color:var(--Azul4);
+}

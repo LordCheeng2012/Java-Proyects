@@ -1,0 +1,80 @@
+/*Animaciones Transiciones*/
+
+
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+}
+
+ul a:hover{
+    border: 1px solid var(--green);
+    background-color: var(--blanco);
+    color: var(--green);
+    transition: background-color,color 1s ease;
+}
+
+
+.DivSelec{
+    background-color: var(--green);
+    content: "Mas Información";
+    font-size: larger;
+    color: var(--blanco);
+    height: 100%;
+    transition: background-color 2s ease,
+      color 2s ease;
+    
+}
+
+.DivSelec:hover{
+   content: "Mas Información";
+    font-size: larger;
+    text-align: left;
+    background-color: var(--blanco);
+    border: 1px solid var(--green);
+    color:var(--green);
+
+  
+   
+}
+.DivSelec:hover img {
+    width: 50%;
+    height: 30%;
+}
+.DivSelec:hover h2{
+    font-size:35px;
+    font-weight: 600;
+}
+.loaded{
+    border: 1px solid rgba(0, 0, 0, 0.308);
+    animation: loaded  2s  infinite  ease;
+
+}
+
+@keyframes loaded {
+
+	0%{
+        
+        border-right: 1px solid white;
+        
+	}
+    50%{
+        
+        border-bottom: 1px solid white;
+       
+    }
+    75%{
+      
+        border-left: 1px solid white;
+       
+    }
+    100%{
+       
+        border-top: 1px solid white;
+       
+    }
+
+}
