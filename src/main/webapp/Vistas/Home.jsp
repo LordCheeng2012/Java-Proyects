@@ -33,9 +33,39 @@ HttpSession Is_Logut = request.getSession();
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
         <link rel="stylesheet"  href="../Css/Home.css" >
-       
+       <link rel="stylesheet" href="../Css/Config.css" />
+       <link rel="stylesheet" href="../Ultimate2012UICSS/ModalsSystemsUl2012.css" />
+      
+
     </head>
     <body   id="body" User="<%=user%>" Authorized="<%=Authorized%>" >
+        <div class="inactive"  >
+            
+            <div class="conntent_Modal" >
+               
+                    <div class="Windows" >
+                        <div class="Info_Window" >
+                            <h1 id="msg" >Informacion Ventana</h1>
+                        </div>
+                        <div class="Option_Window" >
+                            <button onclick="CloseModal()"  ><span class="material-symbols-outlined">close_small</span></button>
+                        </div>
+                    </div>
+                    <div class="Body_Modal" >
+                        <div class="Message" >
+                            <p id="bodymsg"> </p>
+                        </div>
+                        
+                    </div>
+                    <div class="footer_Modal" >
+                        <a class="close" href="../srvLogin?CORREO=<%=user%>" >Confirmar </a>
+                            <a class="succes" href="#" onclick="CloseModal()" >Cancelar</a>
+                      
+                    </div>
+                </div>
+                
+            </div>
+       
        
     
         
@@ -43,28 +73,64 @@ HttpSession Is_Logut = request.getSession();
         <div class="Menu" >
             <div class="info_user" >
                 <div class="user" >
+                     <h1>¡Bienvenido Administrador!</h1>
                     <img id="imgProfile"  >
-                   
+                    
                 </div>
                   
                 <div class="title" >
-                     <h1>¡Bienvenido Administrador!</h1>
-                     <h2><%=user%></h2>
-                    <label>Nombre Usuario</label>
+                   
+                    <label> Correo : <%=user%> </label>  
+                    <label>Nombre Usuario : </label>
                     <label>Estado : Conectado</label>
                     <label> Cargo : Admin</label>  
                 </div>
                  
             </div>
-          <nav>
-              <ul>
-                  
-                  <li><a href="../SrvLoadDataUser?User=User123" > Registrar Empleado </a></li>
-                  <li> <a href="../Load_Data_User?User=User123" > Cerrar Session </a></li>
-                   <li> <a href="../SrvListPlanilla?User=User123" > Mi Perfil </a></li>
-                     <li> <a href="../SrvListPlanilla?User=User123" >Registrar Asistencia </a></li>
-       
+                    <nav  >
+                  <ul>     
+        
+                          <li>
+                              <div class="item" >
+                              <div class="Option"> <a href="#" 
+                            onclick="ShowModal('¿Cerrar Sesión?','Debe Salir de la Aplicación para Ingresar a esta Pagina')"
+                                    > Registrar Asistencia</a></div>
+                              <div class="icon"> <span class="material-symbols-outlined">list_alt</span></div>
+                              </div>
+                             </li>  
+                          <li> 
+                              
+                             <div class="item">
+                                 <div class="Option" > <a href="#" onclick="ShowModal('¿Cerrar Sesión?','Cierra todas las operaciones \n\
+                                    antes de Finalizar tu Session')" >Cerrar Session</a></div>
+                              <div class="icon"> <span class="material-symbols-outlined">login</span></div>
+                              </div>
+                          </li>
+                          <li> 
+                           <div class="item" >
+                              <div class="Option" > <a href="./Listar_Planilla.jsp" >Listar Empleados</a></div>
+                              <div class="icon" > <span class="material-symbols-outlined">list_alt</span></div>
+                              </div>
+                          
+                          </li>
+
+                          <li> 
+                           <div class="item" >
+                              <div class="Option"> <a href="../SrvLoadDataUser?User=User123" >Registrar Empleados</a></div>
+                              <div class="icon" > <span class="material-symbols-outlined">person</span></div>
+                              </div>
+                          
+                          </li>
+                          <li>
+                          <div class="item">
+                              <div class="Option" > <a href="../SrvLoadDataUser?User=User123" >Consulta Empleados</a></div>
+                              <div class="icon"> <span class="material-symbols-outlined">query_stats</span></div>
+                              </div>
+                          </li>
+            
+                              
               </ul>
+                       
             </nav>
         </div>
         
@@ -140,8 +206,11 @@ HttpSession Is_Logut = request.getSession();
             
             
         </main>
-        <script  src="../JS/Home.js">            
+        <script  src="../JS/Home.js">    
+           
         </script>  
+        <script src="../UltimateDesingUiSystemJs/Modal.js" > </script>
+       
         <script>
             Busqueda_Planilla("tblBody");
             Listar_Planilla();

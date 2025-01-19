@@ -118,7 +118,7 @@ public class Modelo {
        result = false;
     }
       
-     }catch(Exception ex){
+     }catch(SQLException ex){
          System.out.println("Al parecer el sistema encontro un Error en la llamada al metodo");
        System.out.println("Se Detuvo el metodo, encontro una Excepcion");
          System.out.println("Error : "+ex.getMessage());
@@ -221,6 +221,40 @@ public class Modelo {
 
     }
     
+     public String GetUsername(String Correo)  {
+            String Result="";
+        if(Correo.contains("")|| Correo.isEmpty()){
+        
+            Result ="No se encontro el Correo ";
+        }
+        
+        try {
+        String Query = "Select Codigo_Personal from login_adms where User_Name = ?";
+        PreparedStatement sts = this.Conexion.prepareStatement(Query);
+        sts.setString(1, Correo);
+        ResultSet Res = sts.executeQuery();
+        
+        if(Res.isBeforeFirst()){
+            System.out.println("No se econtro usuario");
+            Result = "Usuario no Existente";
+        }
+            while (Res.next()) {
+                
+                System.out.println("Se Obtuvo el Usuario");
+                String User = Res.getString("Codigo_Personal");
+                Result =User;
+            }
+            
+            
+        }catch(SQLException es){
+        
+            System.out.println("Se produjo un error en modelo ");
+            System.out.println("Detalle : "+es.getMessage());
+            Result = "Ocurrio un error";
+        }
+        
+        return Result;
+        }
 
     public List<String> Load_Data_User_Logut(String username) throws Exception {
     

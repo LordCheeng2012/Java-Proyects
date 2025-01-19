@@ -44,7 +44,7 @@ body{
 form{
     display:flex;
     flex-direction:column;
-    /*padding:5%;*/
+    padding:5%;
     height: auto;
     border:1px solid var(--blanco);
     color:var(--blanco);

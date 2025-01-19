@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/01/2025, 11:43:05 PM
+    Author     : DELL CI7
+
+Configuracion para iconos en css
+*/
+
+@font-face {
+    font-family: 'MaterialSymbolsOutlined';
+    src: url('../Material_Symbols_Outlined/static/MaterialSymbolsOutlined-Bold.ttf') format('truetype'),
+         url('../Material_Symbols_Outlined/static/MaterialSymbolsOutlined-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.material-symbols-outlined { 
+    font-family: 'MaterialSymbolsOutlined';
+    font-size: 25px;
+    margin:0;
+    padding: 0;
+    /* Ajusta el tamaño según tus necesidades */ 
+}

@@ -36,6 +36,7 @@ public class srvLogin extends HttpServlet {
     
           private final  Modelo mod=new Modelo();
            private final  Vista vist=new Vista();
+           private final Controlador control = new Controlador(mod,vist);
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
@@ -55,6 +56,45 @@ public class srvLogin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
+        //Recibir los parametros
+          String Correo =request.getParameter("CORREO");
+          
+          
+          if(Correo.equals("") || Correo.isEmpty()){
+          
+              System.out.println(Correo);
+              System.out.println("No se Detecto un Correo existente");
+          }else{
+           System.out.println("Correo detectado es : "+Correo);
+             //Llamar a metodo que retorne el codigo de usuario
+             Vista Result = this.control.GetUsername(Correo);
+             System.out.println(" User es : "+Result.estado);
+             String User = Result.estado;
+             try{
+              Result = this.control.Quit_Session(User);
+                Boolean IsQuit = Result.Authotized;  
+             if(IsQuit){
+                              
+                request.getSession().invalidate();
+                 System.out.println("Se cerro la sesión Correctamente");
+                 response.sendRedirect("./Vistas/Login.jsp");
+                 
+             }else{
+             
+                 System.out.println("Ocurrio un error no se pudo cerrar la sesión");
+             }
+             }catch(Exception ex){
+             
+                 System.out.println("Error:  "+ex.getMessage());
+             }
+             
+          }
+          
+        
+          
+         
+        
+        
         
        
       

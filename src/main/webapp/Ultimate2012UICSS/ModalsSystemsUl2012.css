@@ -1,5 +1,27 @@
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --Azul1:#5178f1;
+    --Azul3:#8aa5f4;
+    --Azul4:#c5d3fa;
+    --Azul2:#5178f1;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+
+
 .BackGroundModal{
 	background-color: black;
+        
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -11,8 +33,111 @@
 	align-items: center;
 	justify-content: center;
 }
-
+.inactive{
+    display: none;
+}
+.Back{
+    
+         background-color: rgba(0, 0, 0, 0.459);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+        flex-direction: column;
+	transition: background-color,1s ease;
+	z-index: 2;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+    
+}
 .transback{
 	background-color: rgba(0, 0, 0, 0.459);
 }
 
+.conntent_Modal{
+    color:var(--blanco);
+    background-color:var(--Azul1) ;
+    height: 50%;
+    width: 50%;
+}
+.Windows{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
+.Windows .Info_Window{
+    width: 80%;
+   
+}
+.Windows .Option_Window{
+    width: 20%;
+}
+.Windows .Option_Window button{
+    width: 90%;
+    height: 100%;
+    border: 0;
+    background-color: var(--Azul1);
+    transition: background-color 0.5s ease;
+}
+.Windows .Option_Window button:hover{
+    border: 1px solid var(--blanco);
+    background-color: red;
+    color: var(--blanco);
+}
+.Body_Modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.Body_Modal .Message{
+    border: 1px solid var(--blanco);
+    padding: 5%;
+    font-size: 3vh;
+}
+.footer_Modal{
+    
+     display: flex;
+    flex-direction: row;
+    gap:10%;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    height: 50%;
+}
+.footer_Modal button{
+    border: 0; 
+    transition: background-color 0.5s ease;
+    width: 30%;
+    height: 30%;
+    font-size: 3vh;
+    color: var(--blanco);
+}
+.footer_Modal a{
+    border: 0; 
+    transition: border 0.5s ease;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 3vh;
+    color: var(--blanco);
+}
+.footer_Modal a:hover{
+    
+    border: 1px solid var(--blanco);
+}
+
+
+.footer_Modal .close{
+     background-color: red;
+}
+.footer_Modal .succes{
+      background-color: var(--grisFrio);
+}

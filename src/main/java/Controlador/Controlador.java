@@ -26,7 +26,12 @@ public class Controlador {
         this.vista=vista;
     }
    
-    
+    public Vista GetUsername (String Correo ){
+        
+       Vista v = new Vista();
+       v.estado= this.modelo.GetUsername(Correo);
+       return v;
+    }
     public boolean  ViewLogin_System(String Username,String password) throws Exception {
         String User= Username.trim();
         String Pass = password.trim();
@@ -35,6 +40,11 @@ public class Controlador {
         this.Estado="" + modelo.Estado;
         this.vista.ResponseLogin(this.Estado);
         return Login;
+    }
+    public Vista Quit_Session(String User) throws Exception{
+    
+         this.vista.Authotized= this.modelo.Quit_Session(User);
+         return vista;
     }
     
     public List<String> View_liste_Planille( String fecha ) throws Exception {
@@ -128,6 +138,6 @@ public class Controlador {
         result.Set_lista_Areas(areas);
         return result;
       }
-          
+         
       
 }

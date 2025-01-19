@@ -29,8 +29,10 @@ and open the template in the editor.
 body{
    font-family:sans-serif;
    height:auto;
-    width: 200vh;
+   width: auto;
    display:flex;
+   margin: 0;
+   padding: 0;
    flex-direction:column;
    background-color: var(--azul);
 }
@@ -66,37 +68,67 @@ body main{
 .Menu .info_user{
     width: 50%
 }
+
+.Menu {
+    
+    width: 100%;
+}
 .Menu nav{
-    width:50%;
-    padding: 1%;
+ display:flex;
+ flex-direction:column;
+ width: 50%;
+ height:auto; 
+     
 }
 
-.Menu nav ul {
-    display:flex;
-    flex-direction:column;
-    padding:2%;
-    
+.Menu nav ul li {
+    list-style: none;
+    height: 50%;
 }
-.Menu nav ul li{
-    list-style:none;
-    text-align:center;
-    padding: 0;
-    display: flex;
-    border:1px solid var(--blanco);
-}
-.Menu nav ul li  :hover{
+.Menu  nav ul li:hover{
     color:var(--blanco);
     background-color:var(--Azul1);
+}
+
+
+.Menu  nav ul li .item{
+   display: flex;
+   height: 100%;
+}
+.Menu nav ul li .item div{
+    width: 50%;
+}
+.Menu  nav ul li .item .Option {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Menu  nav ul li .item .Option a{
+    text-decoration:none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 4vh;
+    color:var(--negro);
+  
+}
+
+.Menu nav ul li .item .icon {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     
 }
-.Menu nav ul li a{
-    text-decoration:none;
-    width: 100%;
-    height: 5vh;
-    padding: 3%;
-    color:var(--negro);
-    background-color: var(--Azul4);
-}
+
+
+
+
+
 
 
 .info_user{  
@@ -106,43 +138,39 @@ body main{
 .user{
     display: flex;
     height: 50%;
-     flex-direction: row;
+    flex-direction: row;
     background-color: var(--Azul2);
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+    padding: 3%;
+    color:var(--blanco);
+    
+    
 }
 .user img{
     height: 80%;
     width: 30%;
     /* padding: 1%; */
-    margin:1%;
-    border: 3px solid var(--Azul4);
-    border-radius: 50%;
-    position: relative;
-    top: 25%;
-    outline: 5px solid var(--Azul2);
+    margin:2%;
+    border-radius:50%;
+
 }
 .title{
    
   
 }
 .info_user .title{
-    display:grid;
-     padding-left: 3%;  
-    height: 50%;
-    padding: 2%;    
-    grid-template-columns:
-        repeat(2,1fr);
-}
-.info_user .title label{
-    margin: 3%;
-    font-size: larger;
-}
-.info_user .title h2{
-  font-size: 3vh;
-  margin: 10%;
+   display: flex;
+   flex-direction: column;
+   padding: 5%;
+   font-size: 3vh;
 }
 
+
+.info_user .title label,h1,h2{
+    
+    margin:1%;
+}
 .content {
   height: auto;
   width: 100%;
@@ -156,7 +184,7 @@ body main{
 }
 .search label{
     grid-column:1;
-    margin:0.2%;
+    padding: 2%;
 }
 .search input{
     margin:1%;

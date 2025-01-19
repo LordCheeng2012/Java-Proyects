@@ -18,6 +18,7 @@ public class Vista {
     
     private Controlador controler;
     public String  estado = "Vista llamada";
+    public boolean Authotized;
     private String  UrlUser=""; 
     private String BodyHtml="";
     private  List<String> Listas=new ArrayList<>();
@@ -31,6 +32,17 @@ public class Vista {
         
         
     }
+     
+    public boolean Quit_Session(){
+    
+ 
+        return this.Authotized;
+    }
+    
+    public String GetUsername(){
+    return this.estado;
+    }
+    
     public String ResponseLogin(String ResultMethod){
       return this.estado=ResultMethod;
     }
