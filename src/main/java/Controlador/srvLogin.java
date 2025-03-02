@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Controlador;
-import Controlador.Controlador;
 import Modelo.Modelo;
 import Vista.Vista;
 import java.io.BufferedReader;
@@ -34,9 +33,8 @@ public class srvLogin extends HttpServlet {
      */
    
     
-          private final  Modelo mod=new Modelo();
-           private final  Vista vist=new Vista();
-           private final Controlador control = new Controlador(mod,vist);
+         
+           private final Controlador control = new Controlador();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
@@ -143,7 +141,7 @@ public class srvLogin extends HttpServlet {
             String Response = "dato respuesta";
                      
             //consultar la sesion                       
-            Controlador control= new Controlador(mod,vist);
+            Controlador control= new Controlador();
             System.out.println("estado control  : "+control.Estado);
             
             try{
@@ -155,7 +153,11 @@ public class srvLogin extends HttpServlet {
                 //si da exito y existe el usuario , entonces guardarlo y creamos 
                 //una session
                 HttpSession session= request.getSession();
-                session.setAttribute("User_login",txtUser );
+                Vista Result = this.control.GetUsername(txtUser);
+                System.out.println(" Correo  es : "+txtUser);
+                String User = Result.estado;
+                session.setAttribute("Correo_User",txtUser);
+                session.setAttribute("User_login",User);
                 
                 
                 }else if(resullogin==false) {

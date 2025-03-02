@@ -24,7 +24,7 @@ public class SrvBusqueda_Planilla extends HttpServlet {
     
       private final  Modelo mod=new Modelo();
      private final  Vista vist=new Vista();
-     private final Controlador control = new Controlador(mod,vist);
+     private final Controlador control = new Controlador();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

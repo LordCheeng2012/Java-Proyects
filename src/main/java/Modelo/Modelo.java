@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Modelo;
-
-
 import java.sql.Connection;
 import java.util.Date;
 import java.sql.DriverManager;
@@ -34,7 +32,7 @@ public class Modelo {
     String user = "root";
     String password = "";
     this.Conexion = DriverManager.getConnection(db, user, password);
-    this.Estado = "ConexiÃ³n exitosa";
+    this.Estado = "Conexionn exitosa";
         } catch (ClassNotFoundException e) {
             System.out.println("Error: No se encontrÃ³ el controlador JDBC.");
         } catch (SQLException e) {
@@ -43,10 +41,10 @@ public class Modelo {
         }
     public boolean Iniciar_session(String User ,String Password) {
     
-        String querySql="{CALL Login_Service(?,?,@msg,@result)};";
+        String querySql="{CALL Login_Service(?,?)};";
          boolean resultmethod = false ;
-        String msg=null;
-        String result="Iniciando Sesion";
+        String result,Cod = null,Type_Message=null,Title=null,Message = null,Data_Add=null;
+   
         try {
         result ="entro en el try";
             PreparedStatement prepare=this.Conexion.prepareStatement(querySql);
@@ -54,54 +52,72 @@ public class Modelo {
             prepare.setString(1, User);
              prepare.setString(2, Password);
              result ="asingacion de parametros";
-             prepare.execute();
-             String QueryResult="SELECT @msg as msg,@result as result";
-            ResultSet res = this.Conexion.createStatement().executeQuery(QueryResult);
-            
+           
+            ResultSet res =prepare.executeQuery();
+           
             while(res.next()){
-            
-                 msg= res.getString("msg");
-                result = res.getString("result");
+            Cod= res.getString("Cod_Msg");
+            Type_Message = res.getString("Type_Message");
+            Title = res.getString("Title");
+            Message = res.getString("Message");
+            Data_Add = res.getString("Data_Add");
+               
             }
-            if(msg.equals("FALSE")){
-            
-                 resultmethod=false;
-                 this.Estado=result;
-                 prepare.close();
-            }else if (msg.equals("TRUE")){
-       
-                resultmethod = true;
-                     this.Estado=result;
-                      prepare.close();
-                System.out.println("" + resultmethod) ;
-                }else{
-            
-               resultmethod=false;
-                System.out.println("" + result);
-                  this.Estado=result;
-                   prepare.close();
-                  
-            }
+           //validaciones 
+           
+           switch(Cod){
+               case "SUC02" :
+                   System.out.println(Cod);
+                   System.out.println(Type_Message);
+                   System.out.println(Title);
+                   System.out.println(Message);
+                   System.out.println(Data_Add);
+                 result = Message;
+                 resultmethod = true;
+                  break;
+               case "ERR22" :
+                   System.out.println(Cod);
+                   System.out.println(Type_Message);
+                   System.out.println(Title);
+                   System.out.println(Message);
+                   System.out.println(Data_Add);
+                 result = Message;
+                 resultmethod = false;
+                   break;
+               case "ERR23" :
+                   System.out.println(Cod);
+                   System.out.println(Type_Message);
+                   System.out.println(Title);
+                   System.out.println(Message);
+                   System.out.println(Data_Add);
+                 result = Message;
+                 resultmethod = false;
+                   break;
+                   default:
+                 System.out.println("Error de Componente");
+               
+           }
+               
         }
-        catch(Exception ex){
-            System.out.println("Hubo un error en la ejecucion del metodo : "+ex.getMessage());
+        catch(SQLException ex){
+            System.out.println("Hubo un error en"
+                    + " la ejecucion del metodo : "+ex.getMessage());
             result="ocurrio un error interno en el servidor";
              }
-          this.Estado=result;
-         
+          this.Estado=result;       
             return resultmethod;
     }
     
     public boolean Quit_Session(String user){
           boolean result=false;
-        System.out.println("Cerrando Sesion... un momento.");
-     String querySql="{CALL Quit_Session(?,@msg)};";
-     String QueryMsg = "SELECT @msg";
+             System.out.println("Cerrando Sesion... un momento.");
+             String querySql="{CALL Quit_Session(?,@msg)};";
+             String QueryMsg = "SELECT @msg";
      try{
-    PreparedStatement sts=  this.Conexion.prepareStatement(querySql);
-    sts.setString(1,user);
-    sts.execute();
-    ResultSet Lector= this.Conexion.createStatement().executeQuery(QueryMsg);
+        PreparedStatement sts=  this.Conexion.prepareStatement(querySql);
+        sts.setString(1,user);
+        sts.execute();
+        ResultSet Lector= this.Conexion.createStatement().executeQuery(QueryMsg);
     if(Lector.isBeforeFirst()){
           System.out.println("se encontro el usuario activo.");
         while(Lector.next()){
@@ -150,7 +166,7 @@ public class Modelo {
                 if (matcher.matches()) {
                     status = "formato aceptado";
                     System.out.println("Resultado.. : " + status);
-                    String query = "select * from  personal_planilla where Fecha = ?";
+                    String query = "select * from  asistencia where Fecha = ?";
                     PreparedStatement stat = this.Conexion.prepareStatement(query);
                     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                     //Aqui es donde parseamos la fecha e tipo date a string
@@ -182,7 +198,7 @@ public class Modelo {
                       
                     } else {
                         System.out.println("Obteniendo lista actual.");
-                        System.out.println("Cargando Lista");
+                       
                         while (set.next()) {
 
                             System.out.println("entro en el bucle");
@@ -285,7 +301,7 @@ public class Modelo {
                 int Edad = setread.getInt("Edad");
                 String Sexo = setread.getString("Sexo");
                 String Fecha_Nac = setread.getDate("fecha_nacimiento").toString();
-                String Foto_Perfil = setread.getString("Img_Date");
+                String Foto_Perfil = setread.getString("Foto");
                 String[] rows = {codigo, Nombres, Apellido,
                 String.valueOf(Edad), Sexo, Fecha_Nac, Foto_Perfil};
                 //darle el valor al objeto resultante
@@ -307,7 +323,7 @@ public class Modelo {
      public String Busqueda_Planilla(String fecha, String Codigo, String Area, String Turno) {
     System.out.println("En Modelo");
     StringBuilder Response = new StringBuilder();
-    String MultiQuery = "SELECT * FROM Personal_Planilla WHERE 1=1";
+    String MultiQuery = "SELECT * FROM asistencia WHERE 1=1";
 
     try {
         // ConstrucciÃ³n de la consulta con parÃ¡metros
@@ -359,7 +375,7 @@ public class Modelo {
             }
         }
     } catch (Exception err) {
-        System.out.println("OcurriÃ³ un error en Modelo");
+        System.out.println("Ocurrio un error en Modelo");
         System.out.println("Detalle del error: " + err.getMessage());
     }
 
@@ -388,5 +404,78 @@ public class Modelo {
     
      return Areas;
      } 
+     
+     public List<String> Reporte_Emp(String codEmp,String fecha,String Area,String Carrera) throws Exception{
+        if(codEmp==null){
+             System.out.println("Codigo null");
+             codEmp="";
+         }
+         if(fecha==null){
+             System.out.println("fecha Null");
+             fecha="";
+         }
+         if(Area==null){
+             System.out.println("Area null");
+             Area="";
+         }
+         if(Carrera==null){
+             System.out.println("Carrera null");
+            Carrera="";
+         }
+         
+         
+       List<String>response=new ArrayList<>();
+      
+       String[] params ={"null","null","null","null"};
+      
+          
+         try{
+             if(!codEmp.isEmpty()){
+                  params[0]="'"+codEmp+"'";
+             }
+             if(!fecha.isEmpty()){
+                 params[1]="'"+fecha+"'";
+             }
+             if(!Area.isEmpty()){
+              params[2]="'"+Area+"'"; 
+              
+             }
+             if(!Carrera.isEmpty()){
+                params[3]="'"+Carrera+"'";
+             } 
+              String call = "{CALL Listar_Reporte("+params[0]+","+params[1]+","+params[2]+","+params[3]+")}";
+             PreparedStatement sts=this.Conexion.prepareStatement(call);
+             System.out.println(call);
+             ResultSet set = sts.executeQuery();
+           
+             if(!set.isBeforeFirst()){
+                 System.out.println("No se encontraron resultados..");
+             }else{
+             
+             while(set.next()){
+             
+                response.add(set.getString("Codigo_Personal"));
+                response.add(set.getString("Fecha"));
+                response.add(set.getString("Area"));
+                response.add(set.getString("Carrera"));
+                response.add(set.getString("Turno"));
+                response.add(set.getString("Rol"));
+                response.add(set.getString("Hora_Ing"));
+                response.add(set.getString("Sal_Break"));
+                response.add(set.getString("Ret_Brike"));
+                response.add(set.getString("Hora_Sal"));
+             
+             }
+             
+             }
+             
+         }catch(SQLException err){
+         
+             System.out.println("Error :" +err.getMessage());
+         }
+         return response;
+     }
+     
+     
     
 }

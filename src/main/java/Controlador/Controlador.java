@@ -18,12 +18,10 @@ import java.util.List;
 public class Controlador {
   
     public String Estado = "Inicializando controlador";
-    private final Modelo modelo;
-    private final Vista vista;
-    public Controlador(Modelo modelo,Vista vista){
-      
-        this.modelo=modelo;
-        this.vista=vista;
+    private final Modelo modelo = new Modelo();
+    private final Vista vista= new Vista();
+    public Controlador(){
+      this.Estado="controlador iniciado";
     }
    
     public Vista GetUsername (String Correo ){
@@ -138,6 +136,8 @@ public class Controlador {
         result.Set_lista_Areas(areas);
         return result;
       }
+      
+      
          
       
 }

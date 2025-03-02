@@ -20,6 +20,10 @@
         <servlet-name>SrvBusqueda_Planilla</servlet-name>
         <servlet-class>Controlador.SrvBusqueda_Planilla</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QueryAsistency</servlet-name>
+        <servlet-class>Controlador.QueryAsistency</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvLogin</servlet-name>
         <url-pattern>/srvLogin</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>SrvBusqueda_Planilla</servlet-name>
         <url-pattern>/SrvBusqueda_Planilla</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueryAsistency</servlet-name>
+        <url-pattern>/QueryAsistency</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

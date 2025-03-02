@@ -5,12 +5,12 @@
 --%>
 
 <%@page import="java.util.List"%>
-<%@page import="Modelo.Modelo"%>
 <%@page import="Controlador.Controlador"%>
 <%@page import="Vista.Vista"  session="true" contentType="text/html" pageEncoding="UTF-8"%>
 <%
 String user ="";
 String Authorized="";
+String Correo ="";
 HttpSession Is_Logut = request.getSession();
     if(Is_Logut.getAttribute("User_login")==null){
         Authorized="False";
@@ -22,6 +22,7 @@ HttpSession Is_Logut = request.getSession();
     }else{
                 Authorized="True";
             user=""+Is_Logut.getAttribute("User_login");
+            Correo=""+Is_Logut.getAttribute("Correo_User");
     
 }
 
@@ -32,14 +33,15 @@ HttpSession Is_Logut = request.getSession();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+          <link rel="shortcut icon" href="../img/web.png" />
         <link rel="stylesheet"  href="../Css/Home.css" >
        <link rel="stylesheet" href="../Css/Config.css" />
        <link rel="stylesheet" href="../Ultimate2012UICSS/ModalsSystemsUl2012.css" />
       
 
     </head>
-    <body   id="body" User="<%=user%>" Authorized="<%=Authorized%>" >
-        <div class="inactive"  >
+    <body  id="body" Correo="<%=Correo%>" Authorized="<%=Authorized%>" >
+        <div class="inactive" id="div_Load"  >
             
             <div class="conntent_Modal" >
                
@@ -58,7 +60,7 @@ HttpSession Is_Logut = request.getSession();
                         
                     </div>
                     <div class="footer_Modal" >
-                        <a class="close" href="../srvLogin?CORREO=<%=user%>" >Confirmar </a>
+                        <a class="close" href="../srvLogin?CORREO=<%=Correo%>" >Confirmar </a>
                             <a class="succes" href="#" onclick="CloseModal()" >Cancelar</a>
                       
                     </div>
@@ -149,9 +151,8 @@ HttpSession Is_Logut = request.getSession();
                     <select  name="SltArea">
                         <option value=""> Seleccione Area</option>
                      <%
-                      Modelo mod= new Modelo();
-                      Vista vist = new Vista();
-                      Controlador control = new Controlador(mod,vist);   
+                     
+                      Controlador control = new Controlador();   
                       List<String> Areas = control.list_Areas().Get_List_Areas();
                      for(String area : Areas){
                      
@@ -165,8 +166,8 @@ HttpSession Is_Logut = request.getSession();
                     </select>
                     <label> Turno de Empleado</label>
                     <select name="SltTurno" >
-                        <option>DIA</option>
-                        <option>NOCHE</option>
+                        <option>Mañana</option>
+                        <option>Noche</option>
                     </select>                     
                     <button type="submit" >Buscar</button>
                 </form>
@@ -188,7 +189,7 @@ HttpSession Is_Logut = request.getSession();
 
                 </thead>
                 <tbody id="tblBody" >
-                    <tr  >
+                    <tr >
                         <td  >dat</td>
                          <td>dat</td>
                           <td>dat</td>

@@ -1,0 +1,205 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/01/2025, 12:09:24 AM
+    Author     : DELL CI7
+*/
+
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --Azul1:#5178f1;
+    --Azul3:#8aa5f4;
+    --Azul4:#c5d3fa;
+    --Azul2:#5178f1;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+body{
+    margin:0;
+    height: 95vh;
+    padding: 1%;
+    font-family: sans-serif;
+    background-color:var(--azul);
+    display: flex;
+    flex-direction: row;
+}
+h1,h2,h3,p{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color:var(--azulopaco);
+    width: 6%;
+    transition: width 1s ease;
+}
+nav:hover{
+    
+   width: 40%; 
+}
+nav ul {
+    width:100%;
+    margin:0;
+    padding:0;
+}
+nav ul li{
+    list-style:none;
+    margin: 1vh;
+    padding: 3vh;
+    display: flex;
+    flex-direction: row;
+    gap:10vh;
+    /* background-color:var(--Azul3); */
+}
+nav ul li div{
+    width: 50%;
+    height: 100%;
+    
+}
+nav ul li:hover{
+    background-color:var(--azul);
+    color : var(--blanco);
+  
+}
+nav .info_User{
+    padding: 2%;
+    margin: 2%;
+    gap:10px;
+    display: flex;
+    flex-direction: row;
+}
+nav .info_User h1{
+    margin :0;
+    padding: 0;
+    
+}
+nav .info_User img{
+    height: 30%;
+    margin: 2%;
+    width: 10vh;
+    border-radius: 50%;
+}
+
+main{
+     background-color:var(--azul);
+     width:  100%;
+     height: auto;
+     display: flex;
+     flex-direction: column;
+    
+}
+main div{
+    margin: 0.1%;
+    padding: 2%;
+    background-color: var(--Azul3);
+    width: auto;
+    height: 100%;
+}
+main .Panel {
+    height: auto;
+    padding: 2%;
+}
+
+
+main .Panel form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+main .Panel form input,select,button,label {
+    margin: 1%;
+    height: 5vh;
+    width: 14%;
+    border:none;
+}
+main .Panel form input,select,button {
+   background-color: var(--Azul4);
+}
+main .Panel form button:hover {
+   background-color: var(--blanco);
+   border:1px solid var(--azul)
+}
+main .Details{
+   padding: 2%;
+}
+main  .Details table{
+    margin: 1%;
+ width: 95%;
+ text-align: center;
+ border-collapse: collapse;
+ background-color: var(--Azul4);
+}
+main  .Details table thead tr th {
+  border: 1px solid var(--blanco);
+    
+}
+main .Details table td{
+    border: 1px solid var(--blanco);
+    
+}
+main .result {
+     
+}
+
+main .result table{
+   
+}
+main .result table thead th {
+    
+}
+main .result table tbody td {
+   
+}
+main .result .info_User {
+   
+}
+main .result .info_User .Data{
+  
+}
+main .result .info_User .Data .table_user{
+  
+}
+main .result .info_User .Data .foto{
+  
+}
+main .result .info_User .Data .foto img{
+   
+}
+.d{
+    margin: 2% 3%;
+    width: 90%;
+    height: 100%;
+    text-align: start;
+}
+.Load{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    background-color: var(--grisFrio);
+    opacity:20%;
+    
+}
+.inactive{
+    display: none;
+}
+.text_Load{
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    left: 90vh;
+    top: 50vh;
+}

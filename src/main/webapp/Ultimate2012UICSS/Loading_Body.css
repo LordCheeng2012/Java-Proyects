@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25/01/2025, 12:23:11 PM
+    Author     : DELL CI7
+*/
+
+:root{
+    --green:#155f36;
+    --verdeUi:#009D00;
+    --azul:#2980F2;
+    --azulopaco:#1138b0;
+    --blanco:white;
+    --negro:black;
+    --rosadoUi:#BA1D48;
+    --verdetrans:#257448;
+    --grisFrio:#A2ABC5;
+    --blanco_semiverde:#e7f0ed;
+    --verde_oscuro:#001e12;    
+    --verde_text1:#87b3a5;
+    --verde_tex2:#4a8c78;
+}
+.body{
+    transition: opacity 1s ease;
+    position: absolute;
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+    color:Var(--blanco);
+    opacity: 40%;
+   
+}
+.absolute{
+    position: absolute;
+}
+    .contet_load{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       height: 100vh;
+       width: 200vh;
+    }
+    .content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+           
+    }
+    .content .item{
+        height: 30%;
+        width: 50%;
+        transition: transform 0.5s ease-in-out;
+        
+    }
+    .item .text{
+        margin: 5% 5%;
+    }
+    .white{
+        background-color: var(--blanco);
+    }
+    .blue{
+         background-color: var(--azul);
+    }
+    .active{
+         transform: scale(1.6);
+    }
+    .disable{
+        transform: scale(1);
+    }
+    .inactive{
+        
+    }
+    
+    

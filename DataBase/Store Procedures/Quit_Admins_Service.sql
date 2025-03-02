@@ -1,12 +1,6 @@
-/*
-
-Funcion para cerrar session
-*/
-
 
 DELIMITER //
-
-create procedure Quit_Session(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Quit_Session`(
 IN USER_Code varchar(200),
 OUT RESULT varchar(300)
 )
@@ -16,7 +10,7 @@ BEGIN
   
 	SET RESULT = 'No se encontro Usuario, o usuario desconocido';
     ELSE
-            UPDATE login_admins SET Off_Session = Day(Now())
+            UPDATE login_adms SET Off_Session = Now()
             WHERE Codigo_Personal = trim(USER_Code) ;
 			/*
             se actualizo el registro existente de la session
@@ -26,5 +20,4 @@ BEGIN
       END IF;
  
 END //
-
 DELIMITER ;

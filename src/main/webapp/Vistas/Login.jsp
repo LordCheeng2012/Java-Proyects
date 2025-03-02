@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>INICIAR SESIÓN</title>
+          <link rel="shortcut icon" href="../img/web.png" />
         <link rel="stylesheet"  href="../Css/Login.css" >
          <link rel="stylesheet"  href="../Ultimate2012UICSS/ULTIMATE2012(2).css">
         <link rel="stylesheet"  href="../Ultimate2012UICSS/Load_UL2012.css">

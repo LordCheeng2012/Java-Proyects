@@ -15,12 +15,15 @@ function Load_User(){
          window.location.href="./Login.jsp?Acces=' Access no authorized'";
      }else{
   
-     var user=document.getElementById("body").getAttribute("User");
+     var Correo=document.getElementById("body").getAttribute("Correo");
      const data= new Interface("carga user");
-     data.load_photo_Profile("imgProfile",user);
+     data.load_photo_Profile("imgProfile",Correo);
      
      }
      
           
 }
+
+
+
 Load_User();

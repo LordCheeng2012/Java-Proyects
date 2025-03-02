@@ -44,7 +44,7 @@
        var img= document.getElementById(img);
       
          //la consulta me devolvera la ruta o datos que nesesito cargar en el dom
-         var url="../Load_Data_User?user="+username;
+         var url="../Load_Data_User?Correo="+username;
          
          fetch(url)
                  .then((respuesta)=>{
@@ -64,7 +64,8 @@
        
        
    }
-  
+   
+
     
     
     

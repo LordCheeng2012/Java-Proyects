@@ -22,3 +22,23 @@ INSERT INTO Empleados_Data (Codigo_Personal, Nombres, Apellidos, Edad, Sexo, fec
 
 insert into admins (codigo_Personal,User_Name,User_Paswword)
 values('MSA458','MoisesSolis@UL.com.pe','901263455');
+
+
+/*insert carreras*/
+/* insert carreras */
+UPDATE Empleados_Data 
+SET carrera = CASE
+    WHEN Codigo_Personal = 'MSA458' THEN 'Ingeniería de Software'
+    WHEN Codigo_Personal = 'AHB723' THEN 'Ingeniería de Sistemas'
+    WHEN Codigo_Personal = 'MDL814' THEN 'Administración'
+    WHEN Codigo_Personal = 'LGP974' THEN 'Marketing'
+    WHEN Codigo_Personal = 'OPF716' THEN 'Economía'
+    WHEN Codigo_Personal = 'JNU489' THEN 'Ingeniería de Sistemas'
+    WHEN Codigo_Personal = 'GTR103' THEN 'Ingeniería de Software'
+    WHEN Codigo_Personal = 'DOH670' THEN 'Administración'
+    WHEN Codigo_Personal = 'TED412' THEN 'Marketing'
+    ELSE 'Otra'
+END
+WHERE Codigo_Personal IN ('MSA458', 'AHB723', 'MDL814', 'LGP974', 'OPF716', 'JNU489', 'GTR103', 'DOH670', 'TED412');
+
+SELECT * FROM empleados_data

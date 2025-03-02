@@ -59,7 +59,7 @@ public class Load_Data_User extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         System.out.println("Se ejecuto do get");
          //Obtener los datos del cliente
-           String Correo = request.getParameter("user");
+          String Correo = request.getParameter("Correo");
           System.out.println(Correo);
           String urlImg="";
      
@@ -71,12 +71,12 @@ public class Load_Data_User extends HttpServlet {
             //convertir en un objeto json legible
             JSONObject data = new JSONObject();             
             //manejar la logica : debe retornar la ruta de la imagen
-            Controlador control = new Controlador(this.mod,this.vist);
+            Controlador control = new Controlador();
              Vista Result = control.GetUsername(Correo);
              System.out.println(" User es : "+Result.estado);
              String User = Result.estado;
             
-            Vista res= control.Load_Data_User(User, "Foto");
+            Vista res= control.Load_Data_User(User,"Foto");
             urlImg=res.View_photo_profile();
             System.out.println("url es : "+urlImg);
  
@@ -135,7 +135,7 @@ public class Load_Data_User extends HttpServlet {
             String Response = "dato respuesta";
              
             //Manejar la logica -> llamar a listar planilla de la fecha actual
-             Controlador control= new Controlador(mod,vist);
+             Controlador control= new Controlador();
                System.out.println("estado control  : "+control.Estado);               
               try{
               List<String> lista =  control.View_liste_Planille(fecha);
